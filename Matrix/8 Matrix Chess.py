@@ -1,4 +1,4 @@
-
+#Draw a chess knight according to the entered coordinates and mark the "*" fields where the knight can go.
 xy = input()
 y = '87654321'.index(xy[1])
 x = 'abcdefgh'.index(xy[0])
