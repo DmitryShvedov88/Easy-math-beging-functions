@@ -1,18 +1,22 @@
 
 print("Введите матрице А")
 n, m = map(int,input().split())
-matrix=[[int(input()) for i in range (m)] for j in range(n)]
+matrixA=[[int(input()) for i in range (m)] for j in range(n)]
 print("Matrix A")
 for i in range(n):
-    print(*matrix[i], sep=" ")
+    print(*matrixA[i], sep=" ")
 
 print("Введите матрице Б")
 a, s = map(int,input().split())
-matrix=[[int(input()) for i in range (s)] for j in range(a)]
+matrixB=[[int(input()) for i in range (s)] for j in range(a)]
 print("Matrix Б")
 for i in range(a):
-    print(*matrix[i], sep=" ")
+    print(*matrixB[i], sep=" ")
 
+
+matrixC=[[matrixA[j][i]+matrixB[j][i] for i in range (m)] for j in range(n)]
 print("сумма матриц")
+for i in range(n):
+    print(*matrixC[i], sep=" ")
 
 print("произведение")
