@@ -21,11 +21,12 @@ for i in range(n):
     print(*matrixC[i], sep=" ")
 
 print("произведение")
-matrixD=[[0 for i in range (m)] for j in range(n)]
+matrixD=[[0]*s for i in range (n)]
 for i in range(n):
-  for j in range(m):
-    for k in range(s):
-       matrixD[i][j] += matrixA[i][k] * matrixB[k][j]
-
-for i in range(n):
-    print(*matrixD[i], sep=" ")
+    for j in range(s):
+        k = 0
+        for r in range(a):
+            k += matrixA[i][r] * matrixB[r][j]
+        matrixD[i][j] = k
+for i in matrixD:
+    print(*i)
