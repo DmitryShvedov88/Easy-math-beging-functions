@@ -1,3 +1,4 @@
+#catch the division by 0 error
 def action (a,b):
     try:
         result=a/b
