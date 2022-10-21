@@ -6,8 +6,8 @@ def action (a,b):
         return result
     except ZeroDivisionError as ex:
         print(f'An error accured: {ex}')
-    except:
-        print("unknown error accured")
+    #except:
+        #print("unknown error accured")
 print("Enter the number a and b separated by space")
 a, b= map(int, input().split())
 print(action (a,b))
