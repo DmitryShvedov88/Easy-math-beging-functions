@@ -2,6 +2,7 @@
 def action (a,b):
     try:
         result=a/b
+        print("result calculated")
         return result
     except ZeroDivisionError as ex:
         print(f'An error accured: {ex}')
