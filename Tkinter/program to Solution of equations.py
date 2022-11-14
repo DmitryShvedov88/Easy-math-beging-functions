@@ -1,21 +1,25 @@
 from tkinter import *
 def clicked1():
-    res = "Привет, {}".format(txt.get())
-    lbl1.configure(text=res)
     txt.grid_remove()
     btn1.grid_remove()
     btn2.grid_remove()
     btn3.grid_remove()
-    lbl2.configure(text="Решаем линейное уравнение a*x+b=0, напиши уравнение")
-    lbl2.grid(column=1, row=3)
+    res = "Привет, {}".format(txt.get())
+    lbl1.configure(text=res)
+    lbl2.configure(text="Решаем линейное уравнение a*x+b=0, запишите коэффициенты")
+    lbl2.grid(column=1, row=2)
+    lbl3.configure(text="Коэффициент a")
+    lbl3.grid(column=0, row=3)
+    lbl4 = Label(window, text="Коэффициент b")
+    lbl4.grid(column=0, row=4)
     txt1 = Entry(window, width=10)
-    txt1.grid(column=1, row=4)
+    txt1.grid(column=1, row=3)
     txt2 = Entry(window, width=10)
-    txt2.grid(column=1, row=5)
-    lbl3.grid_remove()
+    txt2.grid(column=1, row=4)
     btn4 = Button(window, text="Решить уравнение", command=clicked11)
     btn4.grid(column=1, row=8)
 def clicked11():
+
     lbl2.configure(text="Ответ Х=")
     lbl2.grid(column=1, row=5)
 def clicked2():
