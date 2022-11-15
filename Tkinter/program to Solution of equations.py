@@ -1,5 +1,5 @@
 from tkinter import *
-def clicked1():
+def clicked1():# второй экран когда выбрали линейное уравнение
     txt.grid_remove()
     btn1.grid_remove()
     btn2.grid_remove()
@@ -35,18 +35,19 @@ def clicked11():
         f=b/a
         lbl2.configure(text="Ответ: {}".format(f))
         lbl2.grid(column=1, row=5)
-def clicked2():
+def clicked2():# второй экран когда выбрали квадратное уравнение
     btn1.config(state=DISABLED)
     btn2.config(state=DISABLED)
     btn3.config(state=DISABLED)
     lbl.configure(text="Решаем квадратное уравнение")
     lbl.grid(column=1, row=5)
-def clicked3():
+def clicked3():# второй экран когда выбрали уравнение третей степени
     btn1.config(state=DISABLED)
     btn2.config(state=DISABLED)
     btn3.config(state=DISABLED)
     lbl.configure(text="Решаем кубическое уравнение")
     lbl.grid(column=1, row=5)
+# Первое окно, здоровается, знакомиться и предлагает выбрать тип уравнения
 window = Tk()
 window.title("Добро пожаловать в приложение по решению уравнений")
 window.geometry('800x500')
