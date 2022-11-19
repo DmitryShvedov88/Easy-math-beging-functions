@@ -87,12 +87,15 @@ def clicked21():
         lbl2.configure(text="Корней нет")
         lbl2.grid(column=1, row=5)
 
-def clicked3():# второй экран когда выбрали уравнение третей степени
-    btn1.config(state=DISABLED)
-    btn2.config(state=DISABLED)
-    btn3.config(state=DISABLED)
-    lbl.configure(text="Решаем кубическое уравнение")
-    lbl.grid(column=1, row=5)
+def clicked3():# третий экран когда выбрали уравнение третей степени
+    txt.grid_remove()
+    btn1.grid_remove()
+    btn2.grid_remove()
+    btn3.grid_remove()
+    res = "Привет, {}".format(txt.get())
+    lbl1.configure(text=res)
+    lbl2.configure(text="Решаем кубическое уравнение a*x**3+b*x**2+c*x+d=0, запишите коэффициенты")
+    lbl2.grid(column=1, row=2)
 # Первое окно, здоровается, знакомиться и предлагает выбрать тип уравнения
 window = Tk()
 window.title("Добро пожаловать в приложение по решению уравнений")
@@ -110,6 +113,7 @@ lbl3 = Label(window, text="Какое уравнение ты хочешь ре�
 lbl3.grid(column=1, row=3)
 lbl4 = Label(window, text="")
 lbl5 = Label(window, text="")
+lbl6 = Label(window, text="")
 btn1 = Button(window, text="Линейное уравнение", command=clicked1)
 btn1.grid(column=0, row=4)
 btn2 = Button(window, text="Квадратное уравнение", command=clicked2)
