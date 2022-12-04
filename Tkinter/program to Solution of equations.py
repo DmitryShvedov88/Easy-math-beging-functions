@@ -149,4 +149,7 @@ btn3 = Button(window, text="Кубическое уравнение", command=cl
 btn3.grid(column=2, row=4)
 btn4 = Button(window, text="")
 
+keys = [i for i in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
+values = []
+
 window.mainloop()
