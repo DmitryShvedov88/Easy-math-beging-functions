@@ -30,22 +30,22 @@ def clicked11():
 
     btn4.grid_remove()
 
+    values.append(float(format(txt1.get())))
+    values.append(float(format(txt2.get())))
+
+    alphabet = dict(zip(keys, values))
+
     txt1.grid_remove()
     txt2.grid_remove()
 
-    a = float(format(txt1.get()))
-    b = float(format(txt2.get()))
-
-    values.append(float(format(txt1.get())))
-    values.append(float(format(txt2.get())))
-    if (a == 0 and b == 0):
+    if (alphabet["A"] == 0 and alphabet["B"] == 0):
         lbl2.configure(text="Бесконечное количество решений.")
         lbl2.grid(column=1, row=5)
-    if (a == 0 and b != 0):
+    if (alphabet["A"] == 0 and alphabet["B"] != 0):
         lbl2.configure(text="Решений нет.")
         lbl2.grid(column=1, row=5)
-    if (a != 0):
-        f=b/a
+    if (alphabet["A"] != 0):
+        f = alphabet["B"] / alphabet["A"]
         lbl2.configure(text="Ответ: x={}".format(f))
         lbl2.grid(column=1, row=5)
 
