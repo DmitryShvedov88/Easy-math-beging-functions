@@ -43,9 +43,11 @@ def clicked11():
     if (alphabet["A"] == 0 and alphabet["B"] == 0):
         lbl2.configure(text="Бесконечное количество решений.")
         lbl2.grid(column=1, row=5)
+
     if (alphabet["A"] == 0 and alphabet["B"] != 0):
         lbl2.configure(text="Решений нет.")
         lbl2.grid(column=1, row=5)
+
     if (alphabet["A"] != 0):
         f = alphabet["B"] / alphabet["A"]
         lbl2.configure(text="Ответ: x={}".format(f))
@@ -84,30 +86,35 @@ def clicked21():
 
     btn4.grid_remove()
 
+    values.append(float(format(txt1.get())))
+    values.append(float(format(txt2.get())))
+    values.append(float(format(txt3.get())))
+
+    alphabet = dict(zip(keys, values))
+
     txt1.grid_remove()
     txt2.grid_remove()
     txt3.grid_remove()
 
-    a = float(format(txt1.get()))
-    b = float(format(txt2.get()))
-    c = float(format(txt3.get()))
-
-    discr = b ** 2 - 4 * a * c
+    discr = alphabet["B"]**2-4*alphabet["A"]*alphabet["C"]
     res = "Дискриминант= {}".format(discr)
 
     lbl1.configure(text=res)
+
     if discr > 0:
-        x1 = (-b + math.sqrt(discr)) / (2 * a)
-        x2 = (-b - math.sqrt(discr)) / (2 * a)
+        x1 = (-alphabet["B"] + math.sqrt(discr)) / (2 * alphabet["A"])
+        x2 = (-alphabet["B"] - math.sqrt(discr)) / (2 * alphabet["A"])
         lbl2.configure(text="Ответ: x1={}".format(x1))
         lbl2.grid(column=1, row=5)
         lbl3.configure(text="Ответ: x2={}".format(x2))
         lbl3.grid(column=1, row=6)
+
     elif discr == 0:
-        x = -b / (2 * a)
+        x = -alphabet["B"] / (2 * alphabet["A"])
         print("x = %.2f" % x)
         lbl2.configure(text="Ответ: x={}".format(x))
         lbl2.grid(column=1, row=5)
+
     else:
         lbl2.configure(text="Корней нет")
         lbl2.grid(column=1, row=5)
