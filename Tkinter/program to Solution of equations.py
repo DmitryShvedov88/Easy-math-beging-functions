@@ -35,6 +35,9 @@ def clicked11():
 
     a = float(format(txt1.get()))
     b = float(format(txt2.get()))
+
+    values.append(float(format(txt1.get())))
+    values.append(float(format(txt2.get())))
     if (a == 0 and b == 0):
         lbl2.configure(text="Бесконечное количество решений.")
         lbl2.grid(column=1, row=5)

@@ -5,7 +5,6 @@ def clicked1():# второй экран когда выбрали линейн�
     txt.grid_remove()
     btn1.grid_remove()
 
-
     res = "Привет, {}".format(txt.get())
 
     lbl1.configure(text=res)
@@ -21,8 +20,7 @@ def clicked1():# второй экран когда выбрали линейн�
 
     btn4.configure(text="Решить уравнение", command=clicked11)
     btn4.grid(column=1, row=5)
-    return txt1
-    return txt2
+
 def clicked11():
     lbl1.grid_remove()
     lbl3.grid_remove()
