@@ -2,6 +2,7 @@ import math
 from tkinter import *
 
 def clicked1():# второй экран когда выбрали линейное уравнение
+
     txt.grid_remove()
 
     btn1.grid_remove()
@@ -23,11 +24,12 @@ def clicked1():# второй экран когда выбрали линейн�
 
     btn4.configure(text="Решить уравнение", command=clicked11)
     btn4.grid(column=1, row=5)
+
 def clicked11():
+
     lbl1.grid_remove()
     lbl3.grid_remove()
     lbl4.grid_remove()
-
     btn4.grid_remove()
 
     values.append(float(format(txt1.get())))
