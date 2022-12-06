@@ -1,4 +1,5 @@
 import math
+import numpy as np
 from tkinter import *
 
 def clicked1():# второй экран когда выбрали линейное уравнение
@@ -52,6 +53,13 @@ def clicked11():
         f = alphabet["B"] / alphabet["A"]
         lbl2.configure(text="Ответ: x={}".format(f))
         lbl2.grid(column=1, row=5)
+
+    x = np.arange(-10, 10, 0.1)
+    y = x * float(format(txt1.get())) + float(format(txt2.get()))
+    plt.figure(figsize=(10, 10))
+    plt.plot(x, y)
+    plt.grid()
+    plt.show()
 
 def clicked2():# второй экран когда выбрали квадратное уравнение
     txt.grid_remove()

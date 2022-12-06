@@ -1,4 +1,7 @@
 import math
+import sympy as sp
+import numpy as np
+import matplotlib.pyplot as plt
 from tkinter import *
 
 def clicked1():# второй экран когда выбрали линейное уравнение
@@ -28,15 +31,11 @@ def clicked11():
 
     btn4.grid_remove()
 
-    #a = float(format(txt1.get()))
-    #b = float(format(txt2.get()))
-
     values.append(float(format(txt1.get())))
     values.append(float(format(txt2.get())))
     #print(values)
     alphabet = dict(zip(keys, values))
     #print(alphabet)
-
     txt1.grid_remove()
     txt2.grid_remove()
 
@@ -51,6 +50,12 @@ def clicked11():
         lbl2.configure(text="Ответ: x={}".format(f))
         lbl2.grid(column=1, row=5)
 
+    x = np.arange(-10, 10, 0.1)
+    y = x * float(format(txt1.get())) + float(format(txt2.get()))
+    plt.figure(figsize=(10, 10))
+    plt.plot(x, y)
+    plt.grid()
+    plt.show()
 
 # Первое окно, здоровается, знакомиться и предлагает выбрать тип уравнения
 window = Tk()
