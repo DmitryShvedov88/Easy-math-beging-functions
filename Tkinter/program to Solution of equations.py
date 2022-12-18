@@ -1,6 +1,7 @@
 import math
 import numpy as np
 import matplotlib.pyplot as plt
+import logging
 from tkinter import *
 
 def clicked1():# второй экран когда выбрали линейное уравнение
@@ -172,5 +173,11 @@ btn4 = Button(window, text="")
 
 keys = [i for i in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
 values = []
+
+logging.debug('Сообщение для дебагинга')
+logging.info('Произошло какое-то событие. Всё идёт по плану.')
+logging.warning('Предупреждение, что-то могло сломаться')
+logging.error('Ошибка, что-то сломалось')
+logging.critical('МЫ В ОГНЕ ЧТО ДЕЛАТЬ?!?!')
 
 window.mainloop()
